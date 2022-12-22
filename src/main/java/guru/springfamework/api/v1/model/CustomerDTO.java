@@ -7,12 +7,18 @@ import lombok.Data;
  * Created by jt on 9/24/17.
  */
 @Data
-public class CategoryDTO {
+public class CustomerDTO {
     private Long id;
-    private String name;
+    private String firstname;
+    private String lastname;
+    private String customerUrl;
 
     @JsonIgnore
     public Long getId() {
         return id;
+    }
+
+    public String getCustomerUrl() {
+        return "/api/v1/customers/" + id;
     }
 }
